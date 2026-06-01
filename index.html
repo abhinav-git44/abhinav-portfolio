@@ -263,6 +263,13 @@ h2.sec-title span{color:var(--green)}
   transition:all .2s;flex-shrink:0;
 }
 .pcard:hover .plink-btn{background:var(--green);color:#020f07;border-color:var(--green)}
+.pimg{
+  width:100%;height:190px;object-fit:cover;border-radius:10px;
+  margin-bottom:1.25rem;border:1px solid var(--border);display:block;
+  filter:brightness(.92) saturate(1.1);transition:filter .3s;
+}
+.pcard.featured .pimg{height:220px}
+.pcard:hover .pimg{filter:brightness(1) saturate(1.2)}
 .ptitle{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
 .psubtitle{font-size:.78rem;color:var(--green);margin-bottom:.75rem;font-weight:500}
 .pdesc{font-size:.875rem;color:var(--text2);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
@@ -481,6 +488,7 @@ h1.hero-name{animation-delay:.2s}
           <span class="pbadge live">● Live Product</span>
           <div class="plink-btn">↗</div>
         </div>
+        <img class="pimg" src="https://images.unsplash.com/photo-1676277791608-ac54e0f19716?w=900&h=220&fit=crop&q=80" alt="AABHA BHU AI Web App" loading="lazy"/>
         <div class="ptitle">AABHA BHU</div>
         <div class="psubtitle">AI-Powered Web App — Deployed on Vercel</div>
         <p class="pdesc">A live AI-powered product built and deployed end-to-end — demonstrating full product ownership from ideation and PRD to production deployment. Built with modern AI tooling and shipped independently, showcasing the ability to go from concept to live product without a dev team.</p>
@@ -496,6 +504,7 @@ h1.hero-name{animation-delay:.2s}
           <span class="pbadge design">◈ Design</span>
           <div class="plink-btn">↗</div>
         </div>
+        <img class="pimg" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=700&h=190&fit=crop&q=80" alt="HOW3 Mobile App MVP" loading="lazy"/>
         <div class="ptitle">HOW3 App — MVP</div>
         <div class="psubtitle">Mobile Application — Figma</div>
         <p class="pdesc">Full MVP design for the HOW3 mobile app. End-to-end user flows, component systems, and interaction patterns built to handoff-ready Figma standards — reflecting deep thinking on UX and feature prioritization.</p>
@@ -510,6 +519,7 @@ h1.hero-name{animation-delay:.2s}
           <span class="pbadge design">◈ Design</span>
           <div class="plink-btn">↗</div>
         </div>
+        <img class="pimg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=190&fit=crop&q=80" alt="HOW3 Admin Panel Dashboard" loading="lazy"/>
         <div class="ptitle">HOW3 Admin Panel</div>
         <div class="psubtitle">B2B Dashboard — Figma</div>
         <p class="pdesc">Enterprise-grade admin panel for the HOW3 platform — data management, user controls, analytics dashboards, and operational workflows designed for internal teams with clarity and efficiency as core principles.</p>
@@ -524,6 +534,7 @@ h1.hero-name{animation-delay:.2s}
           <span class="pbadge side">✦ Side Project</span>
           <div class="plink-btn">↗</div>
         </div>
+        <img class="pimg" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=700&h=190&fit=crop&q=80" alt="Shoefy E-commerce App" loading="lazy"/>
         <div class="ptitle">Shoefy App</div>
         <div class="psubtitle">E-commerce Mobile — Figma</div>
         <p class="pdesc">Polished e-commerce mobile app concept for footwear — focused on discovery, personalization, and conversion with smart filtering and an optimized checkout experience.</p>
@@ -538,6 +549,7 @@ h1.hero-name{animation-delay:.2s}
           <span class="pbadge side">✦ Side Project</span>
           <div class="plink-btn">↗</div>
         </div>
+        <img class="pimg" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=190&fit=crop&q=80" alt="HOW3 Career Page" loading="lazy"/>
         <div class="ptitle">HOW3 Career Page</div>
         <div class="psubtitle">Web Landing Page — Figma</div>
         <p class="pdesc">Careers landing page for HOW3 — attracting top talent with compelling copy hierarchy, role listings, and culture storytelling. Balances brand identity with conversion-optimized layout.</p>
