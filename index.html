@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Abhinav Chaudhary — AI Product Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#050f0a;
+  --bg2:#071209;
+  --bg3:#0a1a10;
+  --card:#0d1f14;
+  --card2:#101f16;
+  --green:#00e676;
+  --green2:#00c853;
+  --green-dim:#1a3d28;
+  --green-glow:rgba(0,230,118,0.12);
+  --green-glow2:rgba(0,230,118,0.06);
+  --text:#ffffff;
+  --text2:#a8c4b0;
+  --text3:#5a7a65;
+  --border:rgba(0,230,118,0.1);
+  --font:'Plus Jakarta Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);overflow-x:hidden;line-height:1.6}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--green-dim);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 3rem;
+  background:rgba(5,15,10,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-size:1.2rem;font-weight:800;color:var(--text);text-decoration:none;
+  letter-spacing:-0.02em;display:flex;align-items:center;gap:6px;
+}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.875rem;font-weight:400;color:var(--text2);text-decoration:none;transition:color .2s;letter-spacing:.01em}
+.nav-links a:hover{color:var(--green)}
+.nav-socials{display:flex;align-items:center;gap:1rem}
+.nav-social{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text2);font-size:12px;font-weight:600;transition:all .2s}
+.nav-social:hover{border-color:var(--green);color:var(--green)}
+.btn-hire{
+  background:var(--green);color:#020f07;padding:.55rem 1.4rem;
+  border-radius:100px;font-weight:700;font-size:.875rem;
+  text-decoration:none;transition:all .2s;white-space:nowrap;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.btn-hire:hover{background:#fff;transform:translateY(-1px)}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding-top:5rem;
+}
+.hero-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%,rgba(0,180,80,0.13) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 50% at 75% 60%,rgba(0,230,118,0.07) 0%,transparent 55%);
+}
+.hero-watermark{
+  position:absolute;right:6%;bottom:8%;
+  font-size:clamp(7rem,15vw,14rem);font-weight:900;
+  color:rgba(0,80,30,0.18);letter-spacing:-.05em;
+  pointer-events:none;user-select:none;line-height:1;
+}
+.hero-inner{
+  max-width:1160px;margin:0 auto;padding:0 2rem;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;
+  width:100%;
+}
+.hero-avail{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.2);
+  border-radius:100px;padding:6px 16px;
+  font-size:.78rem;color:var(--green);font-weight:500;
+  margin-bottom:1.5rem;letter-spacing:.03em;
+}
+.hero-avail::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1.hero-name{
+  font-size:clamp(3.2rem,6vw,5.5rem);
+  font-weight:800;line-height:1.0;letter-spacing:-.04em;
+  margin-bottom:.75rem;
+}
+h1.hero-name .g{color:var(--green)}
+.hero-role{
+  font-size:1.1rem;font-weight:500;color:var(--text2);margin-bottom:1.25rem;
+}
+.hero-role strong{color:var(--green);font-weight:700}
+.hero-desc{
+  font-size:.975rem;color:var(--text2);font-weight:300;
+  line-height:1.75;max-width:480px;margin-bottom:2rem;
+}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
+.btn-primary{
+  background:var(--green);color:#020f07;padding:.7rem 1.75rem;
+  border-radius:100px;font-weight:700;font-size:.9rem;
+  text-decoration:none;transition:all .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:#fff;transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--green);
+  padding:.7rem 1.75rem;border-radius:100px;
+  border:1px solid rgba(0,230,118,0.35);
+  font-weight:600;font-size:.9rem;text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;transition:all .2s;
+}
+.btn-outline:hover{background:var(--green-glow);border-color:var(--green)}
+.hero-notice{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border);
+  border-radius:100px;padding:8px 18px;font-size:.8rem;color:var(--text2);
+}
+.hero-notice span{color:var(--green);font-weight:600}
+
+/* floating cards */
+.hero-right{position:relative;height:420px;display:flex;align-items:center;justify-content:center}
+.float-cards{position:relative;width:100%;height:100%}
+.fcard{
+  position:absolute;
+  background:var(--card);
+  border:1px solid rgba(0,230,118,0.14);
+  border-radius:16px;padding:1.25rem 1.4rem;
+  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+  min-width:150px;
+  animation:floatY 4s ease-in-out infinite;
+  transition:border-color .2s;
+}
+.fcard:hover{border-color:rgba(0,230,118,0.4)}
+.fcard-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(0,230,118,0.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+}
+.fcard-title{font-size:.95rem;font-weight:700;color:var(--text)}
+.fcard-sub{font-size:.75rem;color:var(--text2);font-weight:400}
+
+.fcard:nth-child(1){top:0;right:10%;animation-delay:0s}
+.fcard:nth-child(2){top:35%;left:5%;animation-delay:1.3s}
+.fcard:nth-child(3){bottom:5%;right:15%;animation-delay:.7s}
+.fcard:nth-child(4){top:10%;left:30%;animation-delay:1.9s}
+
+@keyframes floatY{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+.dots{position:absolute;left:0;top:40%;display:flex;flex-direction:column;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);opacity:.5}
+.dot:first-child{opacity:1}
+
+/* ── SECTION COMMON ── */
+section{padding:5.5rem 0}
+.container{max-width:1160px;margin:0 auto;padding:0 2rem}
+.sec-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,230,118,0.08);border:1px solid rgba(0,230,118,0.2);
+  border-radius:100px;padding:4px 14px;
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--green);font-weight:600;margin-bottom:.8rem;
+}
+h2.sec-title{
+  font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;
+  letter-spacing:-.03em;margin-bottom:.75rem;line-height:1.1;
+}
+h2.sec-title span{color:var(--green)}
+.sec-desc{color:var(--text2);font-size:1rem;font-weight:300;max-width:520px;line-height:1.7}
+
+/* ── ABOUT ── */
+#about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:5rem;align-items:start}
+.about-skills-grid{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.skill-row-label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:.5rem;font-weight:600}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.4rem}
+.pill{
+  padding:5px 12px;font-size:.78rem;
+  background:rgba(0,230,118,0.07);
+  border:1px solid rgba(0,230,118,0.18);
+  border-radius:100px;color:var(--text2);font-weight:400;
+  transition:all .2s;
+}
+.pill:hover{background:rgba(0,230,118,0.15);color:var(--green);border-color:var(--green)}
+.about-text p{color:var(--text2);font-weight:300;line-height:1.8;margin-bottom:1rem;font-size:.975rem}
+.about-text p strong{color:var(--text);font-weight:600}
+.timeline{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.titem{
+  display:grid;grid-template-columns:100px 1fr;gap:1rem;
+  padding:1.1rem 0;border-bottom:1px solid var(--border);
+  align-items:start;
+}
+.titem:last-child{border-bottom:none}
+.tdate{font-size:.75rem;color:var(--text3);padding-top:3px;font-weight:500}
+.trole{font-weight:600;font-size:.9rem;margin-bottom:2px}
+.tco{font-size:.78rem;color:var(--green)}
+
+/* stats row */
+.stats-row{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;
+  margin-top:2.5rem;
+}
+.scard{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:14px;padding:1.4rem;text-align:center;
+  transition:border-color .2s,background .2s;
+}
+.scard:hover{border-color:rgba(0,230,118,0.35);background:rgba(0,230,118,0.04)}
+.scard-num{font-size:1.9rem;font-weight:800;letter-spacing:-.03em;color:var(--text)}
+.scard-num span{color:var(--green)}
+.scard-lbl{font-size:.75rem;color:var(--text2);margin-top:.25rem;font-weight:400}
+
+/* ── PROJECTS ── */
+#projects{}
+.projects-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:1.25rem}
+
+.pcard{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:18px;padding:2rem;
+  transition:all .3s;cursor:pointer;
+  text-decoration:none;color:inherit;display:block;
+  position:relative;overflow:hidden;
+}
+.pcard::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%,rgba(0,230,118,0.06),transparent 60%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.pcard:hover{border-color:rgba(0,230,118,0.35);transform:translateY(-4px);background:var(--card2)}
+.pcard:hover::after{opacity:1}
+.pcard.featured{
+  grid-column:span 2;
+  background:linear-gradient(135deg,rgba(0,230,118,0.05),rgba(0,50,20,0.3));
+  border-color:rgba(0,230,118,0.2);
+}
+.pcard-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem}
+.pbadge{
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:4px 11px;border-radius:100px;font-weight:600;
+}
+.live{background:rgba(0,230,118,0.12);color:var(--green);border:1px solid rgba(0,230,118,0.25)}
+.design{background:rgba(139,92,246,0.12);color:#c4b5fd;border:1px solid rgba(139,92,246,0.25)}
+.side{background:rgba(251,191,36,0.1);color:#fde68a;border:1px solid rgba(251,191,36,0.2)}
+.plink-btn{
+  width:34px;height:34px;border-radius:9px;
+  background:rgba(0,230,118,0.08);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text2);font-size:16px;text-decoration:none;
+  transition:all .2s;flex-shrink:0;
+}
+.pcard:hover .plink-btn{background:var(--green);color:#020f07;border-color:var(--green)}
+.ptitle{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
+.psubtitle{font-size:.78rem;color:var(--green);margin-bottom:.75rem;font-weight:500}
+.pdesc{font-size:.875rem;color:var(--text2);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
+.ptags{display:flex;flex-wrap:wrap;gap:.35rem}
+.ptag{
+  padding:3px 9px;font-size:.72rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:100px;color:var(--text3);
+}
+
+/* ── CONTACT ── */
+#contact{background:var(--bg2)}
+.contact-wrap{
+  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;
+}
+.contact-links{display:flex;flex-direction:column;gap:.9rem;margin-top:2rem}
+.clink{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:1rem 1.25rem;
+  text-decoration:none;color:var(--text);
+  transition:all .2s;
+}
+.clink:hover{border-color:rgba(0,230,118,0.35);background:rgba(0,230,118,0.04);transform:translateX(4px)}
+.clink-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(0,230,118,0.1);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;flex-shrink:0;
+}
+.clink-lbl{font-size:.75rem;color:var(--text3);margin-bottom:1px}
+.clink-val{font-size:.9rem;font-weight:500}
+
+/* CTA box */
+.cta-box{
+  background:linear-gradient(135deg,rgba(0,230,118,0.08),rgba(0,80,30,0.2));
+  border:1px solid rgba(0,230,118,0.2);
+  border-radius:20px;padding:2.5rem;margin-top:2rem;
+}
+.cta-box h3{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.5rem}
+.cta-box p{color:var(--text2);font-size:.9rem;margin-bottom:1.5rem;font-weight:300}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:1.75rem 3rem;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.8rem;color:var(--text3);
+}
+.footer-brand{font-weight:700;color:var(--text);font-size:.9rem}
+.footer-brand span{color:var(--green)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero-left>*{animation:fadeUp .65s ease both}
+.hero-avail{animation-delay:.1s}
+h1.hero-name{animation-delay:.2s}
+.hero-role{animation-delay:.28s}
+.hero-desc{animation-delay:.35s}
+.hero-btns{animation-delay:.42s}
+.hero-notice{animation-delay:.5s}
+.hero-right{animation:fadeUp .7s .35s ease both}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links,.nav-socials{display:none}
+  .hero-inner,.about-grid,.contact-wrap{grid-template-columns:1fr;gap:2.5rem}
+  .hero-right{height:320px}
+  .pcard.featured{grid-column:span 1}
+  .proj-grid{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;gap:.5rem;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">AC<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:1.25rem">
+    <div class="nav-socials">
+      <a class="nav-social" href="mailto:abhinav16pum@gmail.com" title="Email">✉</a>
+      <a class="nav-social" href="https://www.linkedin.com/in/abhinav-chaudhary" target="_blank" title="LinkedIn">in</a>
+    </div>
+    <a class="btn-hire" href="mailto:abhinav16pum@gmail.com">Hire Me ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-watermark">AC</div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-avail">Available for new opportunities</div>
+      <h1 class="hero-name">Abhinav<br><span class="g">Chaudhary</span></h1>
+      <p class="hero-role">AI Product Manager &amp; <strong>Product Strategist</strong></p>
+      <p class="hero-desc">Building AI-powered products that scale — from LLM pipelines and RAG systems to intelligent automation. 5+ years turning ambiguous problems into measurable user impact.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="mailto:abhinav16pum@gmail.com">Hire Me →</a>
+        <a class="btn-outline" href="#projects">View Portfolio ◎</a>
+      </div>
+      <div class="hero-notice">🚀 Scaled AI-automated retail to <span>₹2.25 Cr ARR</span> — open to AI PM roles</div>
+    </div>
+    <div class="hero-right">
+      <div class="dots"><div class="dot"></div><div class="dot"></div></div>
+      <div class="float-cards">
+        <div class="fcard">
+          <div class="fcard-icon">🤖</div>
+          <div class="fcard-title">AI Agents</div>
+          <div class="fcard-sub">LLM Orchestration</div>
+        </div>
+        <div class="fcard">
+          <div class="fcard-icon">📊</div>
+          <div class="fcard-title">Product Strategy</div>
+          <div class="fcard-sub">PRDs &amp; OKRs</div>
+        </div>
+        <div class="fcard">
+          <div class="fcard-icon">⚡</div>
+          <div class="fcard-title">n8n Automation</div>
+          <div class="fcard-sub">AI Workflows</div>
+        </div>
+        <div class="fcard">
+          <div class="fcard-icon">🧠</div>
+          <div class="fcard-title">RAG Pipelines</div>
+          <div class="fcard-sub">GPT-4/5 · Claude</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="sec-badge">Background</div>
+        <h2 class="sec-title">About <span>Me</span></h2>
+        <p class="sec-desc">CS-trained PM who speaks both engineering and strategy.</p>
+        <div class="about-skills-grid">
+          <div>
+            <div class="skill-row-label">AI &amp; LLM Stack</div>
+            <div class="skill-pills">
+              <span class="pill">GPT-4/5</span><span class="pill">Claude</span><span class="pill">RAG</span>
+              <span class="pill">AI Agents</span><span class="pill">Prompt Eng.</span><span class="pill">n8n</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-row-label">Product Management</div>
+            <div class="skill-pills">
+              <span class="pill">PRDs</span><span class="pill">OKRs</span><span class="pill">Agile</span>
+              <span class="pill">Roadmapping</span><span class="pill">A/B Testing</span><span class="pill">MVP</span>
+            </div>
+          </div>
+          <div>
+            <div class="skill-row-label">Tools &amp; Analytics</div>
+            <div class="skill-pills">
+              <span class="pill">Figma</span><span class="pill">Jira</span><span class="pill">Power BI</span>
+              <span class="pill">Mixpanel</span><span class="pill">Python</span><span class="pill">SQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="stats-row">
+          <div class="scard"><div class="scard-num">5<span>+</span></div><div class="scard-lbl">Years Experience</div></div>
+          <div class="scard"><div class="scard-num">₹2.25<span>Cr</span></div><div class="scard-lbl">ARR Built</div></div>
+          <div class="scard"><div class="scard-num">95<span>%</span></div><div class="scard-lbl">Features On-time</div></div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p>I'm an AI Product Manager who bridges <strong>deep technical knowledge</strong> with product strategy. My Computer Science background lets me have real conversations with ML engineers — not just translate requirements.</p>
+        <p>As Founder and Product Lead, I <strong>deployed AI-driven demand forecasting, sales analytics, and full n8n workflow automation</strong> — scaling a retail business to ₹2.25 Cr ARR, then handing it over fully automated.</p>
+        <p>At <strong>HCL Technologies</strong> I shipped enterprise features for a US Oracle HCM platform and reduced user-reported issues by 17%. At <strong>Psymate Tech</strong> I owned the product roadmap and delivered 95% of features on time using RICE/MoSCoW frameworks.</p>
+        <div class="timeline">
+          <div class="titem">
+            <div class="tdate">2023 – Now</div>
+            <div><div class="trole">Founder &amp; Product Lead</div><div class="tco">AI-Powered Retail Venture</div></div>
+          </div>
+          <div class="titem">
+            <div class="tdate">2022 – 2023</div>
+            <div><div class="trole">Project Analyst</div><div class="tco">HCL Technologies</div></div>
+          </div>
+          <div class="titem">
+            <div class="tdate">2021 – 2022</div>
+            <div><div class="trole">Product Analyst</div><div class="tco">Psymate Tech</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="projects-intro">
+      <div>
+        <div class="sec-badge">Work</div>
+        <h2 class="sec-title">Featured <span>Projects</span></h2>
+        <p class="sec-desc">Live products, Figma designs, and side projects showcasing AI-first product thinking.</p>
+      </div>
+    </div>
+    <div class="proj-grid">
+
+      <!-- AABHA BHU featured -->
+      <a class="pcard featured" href="https://aabha-o3178tp63-abhinav-c-projects.vercel.app/" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge live">● Live Product</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="ptitle">AABHA BHU</div>
+        <div class="psubtitle">AI-Powered Web App — Deployed on Vercel</div>
+        <p class="pdesc">A live AI-powered product built and deployed end-to-end — demonstrating full product ownership from ideation and PRD to production deployment. Built with modern AI tooling and shipped independently, showcasing the ability to go from concept to live product without a dev team.</p>
+        <div class="ptags">
+          <span class="ptag">AI Product</span><span class="ptag">Vercel</span><span class="ptag">Vibe Coding</span>
+          <span class="ptag">Full Deployment</span><span class="ptag">LLM Integration</span>
+        </div>
+      </a>
+
+      <!-- HOW3 App -->
+      <a class="pcard" href="https://www.figma.com/design/ZxjR7529KnfM4QQ5LFw4Er/HOW3-App-MVP?node-id=0-1&t=Q5R7kKkIDlLDfYzU-1" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge design">◈ Design</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="ptitle">HOW3 App — MVP</div>
+        <div class="psubtitle">Mobile Application — Figma</div>
+        <p class="pdesc">Full MVP design for the HOW3 mobile app. End-to-end user flows, component systems, and interaction patterns built to handoff-ready Figma standards — reflecting deep thinking on UX and feature prioritization.</p>
+        <div class="ptags">
+          <span class="ptag">Figma</span><span class="ptag">MVP</span><span class="ptag">Mobile UX</span><span class="ptag">User Flows</span>
+        </div>
+      </a>
+
+      <!-- HOW3 Admin -->
+      <a class="pcard" href="https://www.figma.com/design/zOg6tw3GSXit3kfYZrUBVM/Admin-Panel?node-id=0-1&t=EwSEipcYFQ2GW2x2-1" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge design">◈ Design</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="ptitle">HOW3 Admin Panel</div>
+        <div class="psubtitle">B2B Dashboard — Figma</div>
+        <p class="pdesc">Enterprise-grade admin panel for the HOW3 platform — data management, user controls, analytics dashboards, and operational workflows designed for internal teams with clarity and efficiency as core principles.</p>
+        <div class="ptags">
+          <span class="ptag">Figma</span><span class="ptag">Dashboard</span><span class="ptag">B2B</span><span class="ptag">Analytics</span>
+        </div>
+      </a>
+
+      <!-- Shoefy -->
+      <a class="pcard" href="https://www.figma.com/design/Dm2W9XM1XhcBstCF1wmEE9/Shoefy-App?node-id=1-520&t=KTflENXUny8tiU2p-1" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge side">✦ Side Project</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="ptitle">Shoefy App</div>
+        <div class="psubtitle">E-commerce Mobile — Figma</div>
+        <p class="pdesc">Polished e-commerce mobile app concept for footwear — focused on discovery, personalization, and conversion with smart filtering and an optimized checkout experience.</p>
+        <div class="ptags">
+          <span class="ptag">Figma</span><span class="ptag">E-commerce</span><span class="ptag">Mobile</span><span class="ptag">UI Design</span>
+        </div>
+      </a>
+
+      <!-- Career Page -->
+      <a class="pcard" href="https://www.figma.com/design/5MsHs4Gles0elrxn4e8qca/HOW-3-Career-Page?node-id=0-1&t=djeQ9Vnd10YCtPig-1" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge side">✦ Side Project</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="ptitle">HOW3 Career Page</div>
+        <div class="psubtitle">Web Landing Page — Figma</div>
+        <p class="pdesc">Careers landing page for HOW3 — attracting top talent with compelling copy hierarchy, role listings, and culture storytelling. Balances brand identity with conversion-optimized layout.</p>
+        <div class="ptags">
+          <span class="ptag">Figma</span><span class="ptag">Web Design</span><span class="ptag">Landing Page</span><span class="ptag">Brand</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div>
+        <div class="sec-badge">Let's Connect</div>
+        <h2 class="sec-title">Open to <span>AI PM</span> Roles</h2>
+        <p class="sec-desc">Actively looking for AI Product Manager roles where I can help ship products that leverage LLMs, AI agents, and emerging AI capabilities.</p>
+        <div class="contact-links">
+          <a class="clink" href="mailto:abhinav16pum@gmail.com">
+            <div class="clink-icon">✉</div>
+            <div><div class="clink-lbl">Email</div><div class="clink-val">abhinav16pum@gmail.com</div></div>
+          </a>
+          <a class="clink" href="tel:+918303229146">
+            <div class="clink-icon">📞</div>
+            <div><div class="clink-lbl">Phone</div><div class="clink-val">+91 83032 29146</div></div>
+          </a>
+          <a class="clink" href="https://aabha-o3178tp63-abhinav-c-projects.vercel.app/" target="_blank">
+            <div class="clink-icon">🌐</div>
+            <div><div class="clink-lbl">Live Project</div><div class="clink-val">AABHA BHU — Vercel ↗</div></div>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="cta-box">
+          <h3>Let's Build Something <span style="color:var(--green)">Together</span></h3>
+          <p>Whether it's a full-time AI PM role, a product strategy consultation, or a quick chat about AI — I'm always open. Reach out and let's talk.</p>
+          <a class="btn-primary" href="mailto:abhinav16pum@gmail.com">Send a Message →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-brand">Abhinav<span>.</span>Chaudhary</span>
+  <span>AI Product Manager · Varanasi, India · 2025</span>
+  <span>Built with product thinking ✦</span>
+</footer>
+
+</body>
+</html>
