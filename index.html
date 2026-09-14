@@ -270,6 +270,15 @@ h2.sec-title span{color:var(--green)}
 }
 .pcard.featured .pimg{height:220px}
 .pcard:hover .pimg{filter:brightness(1) saturate(1.2)}
+.pimg-placeholder{
+  width:100%;height:190px;border-radius:10px;
+  margin-bottom:1.25rem;border:1px dashed rgba(0,230,118,0.25);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
+  background:linear-gradient(135deg,rgba(0,230,118,0.05),rgba(0,50,20,0.15));
+  color:var(--text3);font-size:.78rem;font-weight:500;
+}
+.pimg-placeholder .ph-icon{font-size:1.6rem}
+.pcard.featured .pimg-placeholder{height:220px}
 .ptitle{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:.3rem}
 .psubtitle{font-size:.78rem;color:var(--green);margin-bottom:.75rem;font-weight:500}
 .pdesc{font-size:.875rem;color:var(--text2);line-height:1.65;font-weight:300;margin-bottom:1.25rem}
@@ -482,8 +491,23 @@ h1.hero-name{animation-delay:.2s}
     </div>
     <div class="proj-grid">
 
-      <!-- AABHA BHU featured -->
-      <a class="pcard featured" href="https://aabha-o3178tp63-abhinav-c-projects.vercel.app/" target="_blank">
+      <!-- Timbuckdo App featured -->
+      <a class="pcard featured" href="https://www.figma.com/design/5OToNNXbj57M0mGNp92IXp/Timbuckdo-App-1.0?node-id=0-1&t=Rjz4b7fZ0qFMoFNl-0" target="_blank">
+        <div class="pcard-top">
+          <span class="pbadge design">◈ Design</span>
+          <div class="plink-btn">↗</div>
+        </div>
+        <div class="pimg-placeholder"><span class="ph-icon">🖼</span>Preview coming soon</div>
+        <div class="ptitle">Timbuckdo App</div>
+        <div class="psubtitle">Mobile Application — Figma</div>
+        <p class="pdesc">Latest mobile app design — end-to-end user flows, component systems, and interaction patterns built to handoff-ready Figma standards, reflecting current thinking on UX and feature prioritization.</p>
+        <div class="ptags">
+          <span class="ptag">Figma</span><span class="ptag">Mobile UX</span><span class="ptag">User Flows</span>
+        </div>
+      </a>
+
+      <!-- AABHA BHU -->
+      <a class="pcard" href="https://aabha-o3178tp63-abhinav-c-projects.vercel.app/" target="_blank">
         <div class="pcard-top">
           <span class="pbadge live">● Live Product</span>
           <div class="plink-btn">↗</div>
