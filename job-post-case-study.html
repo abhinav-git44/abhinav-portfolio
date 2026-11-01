@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LLM Job-Post Generator Case Study — Abhinav Chaudhary</title>
+<meta name="description" content="How an LLM-powered job-post generator lifted job posts 24% and revenue 8% at Timbuckdo by letting small business owners describe roles in their own language."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">AC<span>.</span></a>
+  <a class="nav-back" href="index.html#cases">← Back to portfolio</a>
+</nav>
+
+<main>
+  <div class="badge">Case Study · Timbuckdo Innovations</div>
+  <h1>Paid, but not posting: an <span>LLM</span> that writes the job post</h1>
+  <p class="lede">Employers were buying subscriptions and starting job posts, but many never finished them. I found the form was the problem — so we let them describe the role in their own language and had Claude write the post for them to review.</p>
+  <div class="meta">
+    <span><strong>Role:</strong> Product Manager</span>
+    <span><strong>Built with:</strong> Claude (Anthropic)</span>
+    <span><strong>Product:</strong> Timbuckdo Employer Portal</span>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="metric-num">+24%</div><div class="metric-lbl">job posts</div></div>
+    <div class="metric"><div class="metric-num">+8%</div><div class="metric-lbl">platform revenue</div></div>
+    <div class="metric"><div class="metric-num">Hindi · English</div><div class="metric-lbl">or the employer's native language</div></div>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">01</span>The signal</h2>
+    <p>Employers pay for a subscription to post jobs on Timbuckdo. Subscription sales were <strong>healthy</strong>, and employers were <strong>starting</strong> job posts. But many of those posts were <strong>never completed</strong>.</p>
+    <p>That's a bad outcome for everyone: the employer paid but got no value, students had fewer jobs to apply for, and an unused subscription is unlikely to be renewed.</p>
+    <div class="funnel" role="img" aria-label="Funnel: subscriptions bought and job posts started were healthy; completing the job post was the leak; job applications were low as a result">
+      <div class="fstep ok">Buy subscription<small>healthy</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">Start job post<small>healthy</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep leak">Complete job post<small>employers dropping off</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep">Students apply<small>fewer jobs to apply to</small></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">02</span>Root cause</h2>
+    <p>Digging into who was dropping off, most were <strong>small business owners and small enterprises</strong>. They knew what work they needed done, but struggled to turn it into a proper job post — especially the <strong>skills section</strong> and the other details a good listing needs.</p>
+    <div class="callout"><p><strong>Insight:</strong> employers had the demand and had already paid. The blocker was translating "I need someone to do this" into the structured fields our form asked for.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">03</span>The idea</h2>
+    <p>Instead of asking employers to fill a form, let them <strong>describe the role in their own words and language</strong>, and have an LLM produce the complete job post: description, skills, tags, pay range and recommended skill set. The employer then reviews it, edits anything they don't like, and posts.</p>
+    <h3>Key product decisions</h3>
+    <ul>
+      <li><strong>Their language, not ours.</strong> Employers can describe the role in Hindi, English or their native language.</li>
+      <li><strong>Fill the whole post, not just skills.</strong> Skills were the worst step, but every field was friction for these users.</li>
+      <li><strong>AI drafts, the employer decides.</strong> Nothing is posted until the employer has reviewed and, if needed, edited the draft.</li>
+      <li><strong>Built into the existing flow.</strong> The tech team integrated the LLM directly into the job-posting portal, so employers didn't need to learn anything new.</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">04</span>The solution</h2>
+    <div class="flows">
+      <div class="flow before">
+        <div class="flow-title">Before</div>
+        <div class="fnode">Employer buys a subscription</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Starts a job post</div>
+        <div class="fdown">↓</div>
+        <div class="fnode bad">Stuck on skills and job details</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Abandons the post · subscription unused</div>
+      </div>
+      <div class="flow after">
+        <div class="flow-title">After</div>
+        <div class="fnode">Employer describes the role in their own language</div>
+        <div class="fdown">↓</div>
+        <div class="fnode good">Claude drafts the full post: description, skills, tags, pay range</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Employer reviews and edits</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Job is posted</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">05</span>Results</h2>
+    <p>Measured on the analytics dashboard after launch:</p>
+    <ul>
+      <li>Job posts grew <strong>24%</strong>.</li>
+      <li>More job posts led to <strong>more job applications</strong> from students.</li>
+      <li>More employers bought <strong>monthly subscriptions</strong> to post jobs.</li>
+      <li>Platform revenue grew about <strong>8%</strong>, driven by more job posts and more jobs completed.</li>
+    </ul>
+    <div class="funnel" role="img" aria-label="Chain of impact: easier posting led to more job posts, more applications, more subscriptions, and 8% revenue growth">
+      <div class="fstep ok">Easier posting<small>AI-drafted</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">More job posts<small>+24%</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">More applications<small>students</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">More subscriptions<small>monthly</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">Revenue<small>+8%</small></div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">06</span>What I learned</h2>
+    <ul>
+      <li><strong>Paid but unused is an early churn warning.</strong> Healthy subscription sales hid the fact that employers weren't getting value.</li>
+      <li><strong>Forms are written for the platform, not the user.</strong> Small business owners think in tasks, not in "skills" and "tags".</li>
+      <li><strong>Use AI to remove work, then keep the human in charge.</strong> The draft does the hard part; the review step keeps employers in control of what's posted.</li>
+    </ul>
+  </section>
+
+  <div class="cta no-print">
+    <p>Want the detail? Read the product requirements for this feature.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center"><a class="btn" href="job-post-prd.html">Read the PRD →</a><a href="Abhinav-Chaudhary-LLM-Job-Post-PRD.pdf" download style="color:var(--green);font-weight:600;font-size:.9rem">Download PDF ↓</a></div>
+  </div>
+</main>
+
+<footer>Abhinav Chaudhary · AI Product Manager · Bengaluru, India</footer>
+
+</body>
+</html>
