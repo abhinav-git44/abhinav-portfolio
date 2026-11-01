@@ -137,9 +137,17 @@ footer{border-top:1px solid var(--border);padding:1.5rem 2rem;text-align:center;
 }
 
 /* ── PRINT (PRD) ── */
+@page{size:A4;margin:16mm 14mm}
 @media print{
   :root{--bg:#fff;--bg2:#f3f5f4;--card:#fff;--text:#111;--text2:#333;--text3:#666;--border:#ddd;--green:#0a7a3f}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-size:12px}
   nav,.no-print{display:none}
-  main{padding:0}
-  section{break-inside:avoid}
+  main{padding:0;max-width:none}
+  section{margin-top:1.75rem}
+  h1{font-size:2rem}
+  .table-wrap{border:none;border-radius:0;overflow:visible}
+  table{min-width:0;border:1px solid var(--border)}
+  tr,.callout{break-inside:avoid}
+  h2,h3{break-after:avoid}
 }
