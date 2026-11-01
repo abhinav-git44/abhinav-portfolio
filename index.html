@@ -281,6 +281,25 @@ h2.sec-title span{color:var(--green)}
   border-radius:100px;color:var(--text3);
 }
 
+/* ── CASE STUDIES ── */
+#cases{background:var(--bg2)}
+.cs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+.cscard{
+  background:var(--card);border:1px solid var(--border);
+  border-radius:18px;padding:2rem;transition:border-color .2s;
+  display:flex;flex-direction:column;
+}
+.cscard:hover{border-color:rgba(0,230,118,0.35)}
+.cs-co{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);font-weight:600;margin-bottom:.4rem}
+.cs-metric{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;color:var(--green);line-height:1.1}
+.cs-metric-lbl{font-size:.78rem;color:var(--text2);margin-bottom:1.25rem}
+.cs-title{font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:1rem}
+.cs-step{margin-bottom:.9rem}
+.cs-step-lbl{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-weight:600;margin-bottom:.2rem}
+.cs-step p{font-size:.875rem;color:var(--text2);line-height:1.65;font-weight:300}
+.cs-step p strong{color:var(--text);font-weight:600}
+.cscard .ptags{margin-top:auto;padding-top:.5rem}
+
 /* ── CONTACT ── */
 #contact{background:var(--bg2)}
 .contact-wrap{
@@ -341,7 +360,7 @@ h1.hero-name{animation-delay:.2s}
   .hero-inner,.about-grid,.contact-wrap{grid-template-columns:1fr;gap:2.5rem}
   .hero-right{height:320px}
   .pcard.featured{grid-column:span 1}
-  .proj-grid{grid-template-columns:1fr}
+  .proj-grid,.cs-grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:1fr 1fr}
   footer{flex-direction:column;gap:.5rem;text-align:center}
 }
@@ -354,6 +373,7 @@ h1.hero-name{animation-delay:.2s}
   <a class="nav-logo" href="#">AC<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#cases">Case Studies</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -375,12 +395,12 @@ h1.hero-name{animation-delay:.2s}
       <div class="hero-avail">Available for new opportunities</div>
       <h1 class="hero-name">Abhinav<br><span class="g">Chaudhary</span></h1>
       <p class="hero-role">AI Product Manager &amp; <strong>Product Strategist</strong></p>
-      <p class="hero-desc">Building AI-powered products that scale — from LLM pipelines and RAG systems to intelligent automation. 5+ years turning ambiguous problems into measurable user impact.</p>
+      <p class="hero-desc">4+ years across product and delivery, including 3 years owning consumer web and mobile apps end to end. I lead a 5-member team on an AI-powered gig platform for 500K+ students, and use experiment data to decide what ships.</p>
       <div class="hero-btns">
         <a class="btn-primary" href="mailto:abhinav16pum@gmail.com">Hire Me →</a>
-        <a class="btn-outline" href="#projects">View Portfolio ◎</a>
+        <a class="btn-outline" href="#cases">View Case Studies ◎</a>
       </div>
-      <div class="hero-notice">🚀 Drove <span>35% user growth</span> at an AI-powered gig platform — open to AI PM roles</div>
+      <div class="hero-notice">🚀 Cut eKYC drop-off <span>42% → 18%</span> and shipped an LLM feature that lifted job posts <span>24%</span></div>
     </div>
     <div class="hero-right">
       <div class="dots"><div class="dot"></div><div class="dot"></div></div>
@@ -403,7 +423,7 @@ h1.hero-name{animation-delay:.2s}
         <div class="fcard">
           <div class="fcard-icon">🧠</div>
           <div class="fcard-title">RAG Pipelines</div>
-          <div class="fcard-sub">GPT-4/5 · Claude</div>
+          <div class="fcard-sub">GPT-5 · Claude</div>
         </div>
       </div>
     </div>
@@ -422,54 +442,113 @@ h1.hero-name{animation-delay:.2s}
           <div>
             <div class="skill-row-label">AI &amp; LLM Stack</div>
             <div class="skill-pills">
-              <span class="pill">GPT-4/5</span><span class="pill">Claude</span><span class="pill">RAG</span>
-              <span class="pill">AI Agents</span><span class="pill">Prompt Eng.</span><span class="pill">n8n</span>
+              <span class="pill">GPT-5</span><span class="pill">Claude</span><span class="pill">RAG</span>
+              <span class="pill">AI Agents</span><span class="pill">Orchestration</span><span class="pill">Prompt Eng.</span>
+              <span class="pill">n8n</span><span class="pill">Lovable</span>
             </div>
           </div>
           <div>
             <div class="skill-row-label">Product Management</div>
             <div class="skill-pills">
-              <span class="pill">PRDs</span><span class="pill">OKRs</span><span class="pill">Agile</span>
-              <span class="pill">Roadmapping</span><span class="pill">A/B Testing</span><span class="pill">MVP</span>
+              <span class="pill">PRDs</span><span class="pill">User Stories</span><span class="pill">RICE/ICE</span>
+              <span class="pill">A/B Testing</span><span class="pill">OKRs</span><span class="pill">GTM</span>
+              <span class="pill">MVP</span><span class="pill">Agile/Scrum</span>
             </div>
           </div>
           <div>
             <div class="skill-row-label">Tools &amp; Analytics</div>
             <div class="skill-pills">
-              <span class="pill">Figma</span><span class="pill">Jira</span><span class="pill">Power BI</span>
-              <span class="pill">Mixpanel</span><span class="pill">Python</span><span class="pill">SQL</span>
+              <span class="pill">SQL</span><span class="pill">Python</span><span class="pill">Mixpanel</span>
+              <span class="pill">Power BI</span><span class="pill">Figma</span><span class="pill">Balsamiq</span>
+              <span class="pill">Jira</span><span class="pill">Postman</span>
             </div>
           </div>
         </div>
         <div class="stats-row">
-          <div class="scard"><div class="scard-num">5<span>+</span></div><div class="scard-lbl">Years Experience</div></div>
-          <div class="scard"><div class="scard-num">35<span>%</span></div><div class="scard-lbl">User Growth Driven</div></div>
-          <div class="scard"><div class="scard-num">95<span>%</span></div><div class="scard-lbl">Features On-time</div></div>
+          <div class="scard"><div class="scard-num">4<span>+</span></div><div class="scard-lbl">Years Experience</div></div>
+          <div class="scard"><div class="scard-num">24<span>%</span></div><div class="scard-lbl">Job Posts Lift (LLM)</div></div>
+          <div class="scard"><div class="scard-num">~12<span>K</span></div><div class="scard-lbl">Users in Q1 (0→1)</div></div>
         </div>
       </div>
       <div class="about-text">
-        <p>I'm an AI Product Manager who bridges <strong>deep technical knowledge</strong> with product strategy. My Computer Science background lets me have real conversations with ML engineers — not just translate requirements.</p>
-        <p>As Product Manager at <strong>TimbuckDo</strong>, an AI-powered student gig platform, I drove a 35% increase in user base through GenAI-assisted workflows and user-centric feature prioritization.</p>
-        <p>At <strong>Prashaar Innovations</strong> I led the 0→1 launch of the HOW3 mobile app — from wireframes to a 4-month MVP onboarding 1,200+ users — and built out its admin panel and analytics dashboards. At <strong>HCLTech</strong> I managed the Oracle HCM platform roadmap for Quest Diagnostics, and at <strong>Psymate Healthcare</strong> I used prioritization frameworks to deliver 95% of key features on time, lifting product adoption by 10%.</p>
+        <p>I'm a Product Manager with <strong>4+ years across product and delivery</strong>, including 3 years owning consumer web and mobile apps end to end. My Computer Science background lets me work hands-on with LLMs, RAG, AI agents and SQL, and I use experiment data to decide what ships.</p>
+        <p>At <strong>Timbuckdo Innovations</strong> I own the Students App, Website and Employer App for an AI-powered gig platform with 500K+ students, leading a 5-member team from discovery to release. I redesigned eKYC onboarding (drop-off 42% → 18%, verified users +35% in one quarter) and shipped an LLM job-post generator that lifted job posts 24% and platform revenue 8%.</p>
+        <p>At <strong>House Of Web3</strong> I owned strategy, roadmap and 0→1 delivery of a consumer Web3 mobile app, shipping the News &amp; Tech App in 4 months and onboarding ~12,000 users in the first quarter. At <strong>HCL Tech</strong> I translated requirements from Quest Diagnostics into user stories and specs for an enterprise Oracle HCM platform, delivering 15+ features across 8 Agile sprints.</p>
         <div class="timeline">
           <div class="titem">
             <div class="tdate">Jun 2026 – Now</div>
-            <div><div class="trole">Product Manager</div><div class="tco">TimbuckDo</div></div>
+            <div><div class="trole">Product Manager</div><div class="tco">Timbuckdo Innovations</div></div>
           </div>
           <div class="titem">
-            <div class="tdate">Jan 2024 – May 2026</div>
-            <div><div class="trole">Product Manager</div><div class="tco">Prashaar Innovations</div></div>
+            <div class="tdate">Nov 2023 – May 2026</div>
+            <div><div class="trole">Product Manager</div><div class="tco">House Of Web3</div></div>
           </div>
           <div class="titem">
             <div class="tdate">Aug 2022 – Nov 2023</div>
-            <div><div class="trole">Project Analyst</div><div class="tco">HCLTech</div></div>
+            <div><div class="trole">Project Analyst</div><div class="tco">HCL Tech</div></div>
           </div>
           <div class="titem">
-            <div class="tdate">Feb 2022 – Jul 2022</div>
-            <div><div class="trole">Product Management Intern</div><div class="tco">Psymate Healthcare</div></div>
+            <div class="tdate">2018 – 2022</div>
+            <div><div class="trole">B.Tech, Computer Science</div><div class="tco">JSS Academy of Technical Education, Noida</div></div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="container">
+    <div class="sec-badge">Impact</div>
+    <h2 class="sec-title">Case <span>Studies</span></h2>
+    <p class="sec-desc">The problems I owned, what I did about them, and what changed.</p>
+    <div class="cs-grid">
+
+      <div class="cscard">
+        <div class="cs-co">Timbuckdo Innovations</div>
+        <div class="cs-metric">42% → 18%</div>
+        <div class="cs-metric-lbl">eKYC funnel drop-off</div>
+        <div class="cs-title">eKYC Onboarding Redesign</div>
+        <div class="cs-step"><div class="cs-step-lbl">Problem</div><p>42% of students dropped off in the DigiLocker/Decentro eKYC funnel before becoming verified.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">What I did</div><p>Ran step-level funnel analysis to find where users were lost, then redesigned onboarding under a <strong>no-document-storage</strong> compliance constraint.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">Outcome</div><p>Drop-off cut to <strong>18%</strong>; verified users grew <strong>35%</strong> in one quarter.</p></div>
+        <div class="ptags"><span class="ptag">Funnel Analysis</span><span class="ptag">eKYC</span><span class="ptag">DigiLocker</span><span class="ptag">Compliance</span></div>
+      </div>
+
+      <div class="cscard">
+        <div class="cs-co">Timbuckdo Innovations</div>
+        <div class="cs-metric">+24%</div>
+        <div class="cs-metric-lbl">job posts · +8% platform revenue</div>
+        <div class="cs-title">LLM Job-Post Generator</div>
+        <div class="cs-step"><div class="cs-step-lbl">What it does</div><p>Turns a recruiter's plain <strong>Hindi or English</strong> brief into a structured listing: title, description, tags and skills.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">What I did</div><p>Owned the feature on the Employer App from discovery to release with a 5-member team.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">Outcome</div><p>Job posts up <strong>24%</strong> and platform revenue up <strong>8%</strong>.</p></div>
+        <div class="ptags"><span class="ptag">LLM</span><span class="ptag">GenAI</span><span class="ptag">Prompt Engineering</span><span class="ptag">Employer App</span></div>
+      </div>
+
+      <div class="cscard">
+        <div class="cs-co">House Of Web3</div>
+        <div class="cs-metric">~12K</div>
+        <div class="cs-metric-lbl">users in the first quarter post-launch</div>
+        <div class="cs-title">0→1 News &amp; Tech App</div>
+        <div class="cs-step"><div class="cs-step-lbl">What I did</div><p>Owned strategy, roadmap and delivery across engineering, design and business. Replaced long design cycles with rapid Figma/Balsamiq prototyping and early user validation.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">Outcome</div><p>Shipped in <strong>4 months</strong>. Design iterations cut from 4 to 2 and feature validation time by ~30%.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">After launch</div><p>Found activation and retention drop-offs through user research and cohort analysis; A/B-tested fixes lifted engagement <strong>22%</strong> and 30-day retention <strong>15%</strong>.</p></div>
+        <div class="ptags"><span class="ptag">0→1</span><span class="ptag">Consumer Mobile</span><span class="ptag">Cohort Analysis</span><span class="ptag">A/B Testing</span></div>
+      </div>
+
+      <div class="cscard">
+        <div class="cs-co">Timbuckdo Innovations</div>
+        <div class="cs-metric">Full-KYC</div>
+        <div class="cs-metric-lbl">banking partner for student payouts</div>
+        <div class="cs-title">Banking Partner Evaluation</div>
+        <div class="cs-step"><div class="cs-step-lbl">Problem</div><p>The platform needed a full-KYC banking partner to replace prepaid-card provider Leo1.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">What I did</div><p>Evaluated partners on regulatory compliance, KYC depth, integration effort and cost, including a <strong>Decentro API cost analysis</strong>.</p></div>
+        <div class="cs-step"><div class="cs-step-lbl">Outcome</div><p>Recommended the partner that shapes account opening and payouts for the platform's students.</p></div>
+        <div class="ptags"><span class="ptag">Fintech</span><span class="ptag">Vendor Evaluation</span><span class="ptag">Cost Analysis</span><span class="ptag">Compliance</span></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -480,8 +559,8 @@ h1.hero-name{animation-delay:.2s}
     <div class="projects-intro">
       <div>
         <div class="sec-badge">Work</div>
-        <h2 class="sec-title">Featured <span>Projects</span></h2>
-        <p class="sec-desc">Live products, Figma designs, and side projects showcasing AI-first product thinking.</p>
+        <h2 class="sec-title">Products &amp; <span>Prototypes</span></h2>
+        <p class="sec-desc">A live AI product I built myself, plus Figma prototypes from my product work and side projects.</p>
       </div>
     </div>
     <div class="proj-grid">
@@ -526,7 +605,7 @@ h1.hero-name{animation-delay:.2s}
         <img class="pimg" src="how3-app.jpg" alt="HOW3 Mobile App MVP" loading="lazy"/>
         <div class="ptitle">HOW3 App — MVP</div>
         <div class="psubtitle">Mobile Application — Figma</div>
-        <p class="pdesc">Full MVP design for the HOW3 mobile app. End-to-end user flows, component systems, and interaction patterns built to handoff-ready Figma standards — reflecting deep thinking on UX and feature prioritization.</p>
+        <p class="pdesc">MVP design for the HOW3 mobile app, shipped in 4 months and used by ~12,000 users in its first quarter. Rapid prototyping here cut design iterations from 4 to 2.</p>
         <div class="ptags">
           <span class="ptag">Figma</span><span class="ptag">MVP</span><span class="ptag">Mobile UX</span><span class="ptag">User Flows</span>
         </div>
