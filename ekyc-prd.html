@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>eKYC PRD — Abhinav Chaudhary</title>
+<meta name="description" content="Product requirements for replacing manual KYC with instant DigiLocker verification at Timbuckdo."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">AC<span>.</span></a>
+  <a class="nav-back" href="ekyc-case-study.html">← Back to case study</a>
+</nav>
+
+<main>
+  <div class="badge">PRD · Portfolio version</div>
+  <h1>Instant KYC with <span>DigiLocker</span></h1>
+  <p class="lede">Replace 4–5 day manual KYC with instant DigiLocker verification, with a manual fallback, so students can apply for gigs right after signing up.</p>
+  <div class="meta">
+    <span><strong>Owner:</strong> Abhinav Chaudhary, Product Manager</span>
+    <span><strong>Product:</strong> Timbuckdo Students App</span>
+    <span><strong>Team:</strong> app, full-stack, UI/UX, QA</span>
+  </div>
+  <p class="no-print" style="font-size:.85rem"><a href="#" onclick="window.print();return false" style="color:var(--green)">Print or save as PDF ↓</a></p>
+
+  <section>
+    <h2><span class="num">1</span>Problem</h2>
+    <p>Students download the app, sign up and stay active, but few apply for jobs. The analytics funnel shows a <strong>42% drop-off at KYC verification</strong>. KYC is checked manually by the Timbuckdo team and takes <strong>4–5 days</strong>; students can't apply while they wait, and many never return.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>Goals &amp; metrics</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Metric</th><th>Baseline</th></tr></thead>
+        <tbody>
+          <tr><td>Primary</td><td>Drop-off at the KYC step</td><td>42%</td></tr>
+          <tr><td>Secondary</td><td>Verified users</td><td>Current quarter</td></tr>
+          <tr><td>Secondary</td><td>Time from KYC start to verified</td><td>4–5 days</td></tr>
+          <tr><td>Secondary</td><td>Job applications from verified students</td><td>Current level</td></tr>
+          <tr><td>Guardrail</td><td>Verification cost per student</td><td>₹3–4 on Decentro</td></tr>
+          <tr><td>Guardrail</td><td>Share of students falling back to manual review</td><td>New metric</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Users</h2>
+    <ul>
+      <li><strong>Students</strong> who have signed up and need to verify before applying for gigs.</li>
+      <li><strong>Timbuckdo operations team</strong>, who currently review every submission by hand.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Scope</h2>
+    <h3>In scope</h3>
+    <ul>
+      <li>DigiLocker verification inside the Students App (via Decentro at launch).</li>
+      <li>Manual document upload as a fallback when DigiLocker fails.</li>
+      <li>Direct DigiLocker integration, built in parallel to replace Decentro.</li>
+      <li>Funnel tracking for every KYC step.</li>
+    </ul>
+    <h3>Out of scope</h3>
+    <ul>
+      <li>Changes to sign-up, gig discovery or the application flow itself.</li>
+      <li>Expanding the manual verification team.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Requirements</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>User story</th><th>Acceptance criteria</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>R1</td>
+            <td>As a student, I can verify my identity with DigiLocker without leaving the app flow.</td>
+            <td>"Verify with DigiLocker" is the default KYC option. After consent, the result is shown in the app.</td>
+          </tr>
+          <tr>
+            <td>R2</td>
+            <td>As a verified student, I can apply for gigs immediately.</td>
+            <td>On success, KYC status updates instantly and applying is unlocked without any manual step.</td>
+          </tr>
+          <tr>
+            <td>R3</td>
+            <td>As a student whose DigiLocker verification fails, I can still get verified.</td>
+            <td>On any failure (e.g. server error, consent not completed), the student sees a clear message and the option to upload documents for manual review.</td>
+          </tr>
+          <tr>
+            <td>R4</td>
+            <td>As an operations team member, I only review students who couldn't use DigiLocker.</td>
+            <td>The manual review queue contains fallback submissions only.</td>
+          </tr>
+          <tr>
+            <td>R5</td>
+            <td>As the business, we can move from Decentro to direct DigiLocker without disrupting students.</td>
+            <td>Switching provider does not change the student-facing flow. Decentro is switched off once direct integration is stable.</td>
+          </tr>
+          <tr>
+            <td>R6</td>
+            <td>As the product team, we can see where students drop off in KYC.</td>
+            <td>Events tracked: KYC started, DigiLocker success, DigiLocker failure (with reason), fallback upload, manual approval.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Options considered</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Option</th><th>Time to live</th><th>Cost</th><th>Decision</th></tr></thead>
+        <tbody>
+          <tr><td>More people for manual review</td><td>—</td><td>Recurring, grows with sign-ups</td><td class="verdict no">Rejected</td></tr>
+          <tr><td>DigiLocker via Decentro</td><td>Next day</td><td>₹3–4 per verification</td><td class="verdict yes">Launch now</td></tr>
+          <tr><td>Direct DigiLocker integration</td><td>~1 month</td><td>Build effort, no per-verification fee</td><td class="verdict later">Build in parallel, then switch</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>Risks &amp; mitigations</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td>DigiLocker or Decentro downtime / server errors</td><td>Manual upload fallback (R3); failure reasons tracked (R6).</td></tr>
+          <tr><td>Per-verification cost grows with volume</td><td>Direct integration replaces Decentro (R5).</td></tr>
+          <tr><td>Some students can't use DigiLocker</td><td>Manual upload fallback stays available.</td></tr>
+          <tr><td>Direct integration takes longer than planned</td><td>Decentro keeps running until the switch, so students aren't affected.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>Rollout</h2>
+    <ol>
+      <li><strong>Day 1:</strong> launch DigiLocker via Decentro with manual fallback and funnel tracking.</li>
+      <li><strong>In parallel (~1 month):</strong> build and test direct DigiLocker integration.</li>
+      <li><strong>Switch:</strong> move traffic to direct integration once stable; turn off Decentro.</li>
+      <li><strong>Review:</strong> compare KYC drop-off, time to verification and fallback share against baseline.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>Outcome</h2>
+    <p>KYC drop-off fell from <strong>42% to 18%</strong>, verified users grew <strong>35% in one quarter</strong>, and verification went from <strong>4–5 days to instant</strong> for DigiLocker users.</p>
+  </section>
+</main>
+
+<footer class="no-print">Abhinav Chaudhary · AI Product Manager · Bengaluru, India</footer>
+
+</body>
+</html>

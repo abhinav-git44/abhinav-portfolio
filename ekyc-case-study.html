@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>eKYC Case Study — Abhinav Chaudhary</title>
+<meta name="description" content="How I cut eKYC drop-off from 42% to 18% at Timbuckdo by replacing 4–5 day manual verification with instant DigiLocker verification."/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="case.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">AC<span>.</span></a>
+  <a class="nav-back" href="index.html#cases">← Back to portfolio</a>
+</nav>
+
+<main>
+  <div class="badge">Case Study · Timbuckdo Innovations</div>
+  <h1>From 4–5 days to <span>instant</span>: fixing eKYC drop-off</h1>
+  <p class="lede">Students were signing up and staying active, but very few applied for jobs. I traced the gap to a manual KYC step and replaced it with instant DigiLocker verification — live the next day, with a cheaper long-term build running in parallel.</p>
+  <div class="meta">
+    <span><strong>Role:</strong> Product Manager</span>
+    <span><strong>Team:</strong> app developer, full-stack developer, UI/UX designer, QA</span>
+    <span><strong>Product:</strong> Timbuckdo Students App</span>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="metric-num">42% → 18%</div><div class="metric-lbl">drop-off at the KYC step</div></div>
+    <div class="metric"><div class="metric-num">+35%</div><div class="metric-lbl">verified users in one quarter</div></div>
+    <div class="metric"><div class="metric-num">4–5 days → instant</div><div class="metric-lbl">time to verification</div></div>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <h2><span class="num">01</span>The signal</h2>
+    <p>Timbuckdo connects college students with part-time gigs. Looking at the analytics dashboard, the top of the funnel looked healthy: students were <strong>downloading the app, signing up, and coming back daily</strong>. But the number of <strong>job applications</strong> was very low compared with those numbers.</p>
+    <p>Active users who don't apply for jobs means the platform isn't delivering its core value — and employers don't get applicants. So the question was: <strong>where between "active" and "applied" are students getting stuck?</strong></p>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <h2><span class="num">02</span>Finding the leak</h2>
+    <p>Breaking the journey into steps on the analytics dashboard showed one clear break. Students had to pass KYC verification before they could apply, and that is where they were dropping off.</p>
+    <div class="funnel" role="img" aria-label="Funnel: Download, Sign up and Daily active were healthy; KYC verification had a 42% drop-off; Apply for jobs was low">
+      <div class="fstep ok">Download<small>healthy</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">Sign up<small>healthy</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep ok">Daily active<small>healthy</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep leak">KYC verification<small>42% drop-off</small></div>
+      <div class="farrow">→</div>
+      <div class="fstep">Apply for jobs<small>low</small></div>
+    </div>
+    <h3>Root cause</h3>
+    <p>KYC was <strong>manual</strong>. After a student submitted documents, someone from the Timbuckdo team had to check them by hand, which took <strong>4–5 days</strong>. During that wait, students couldn't apply for anything. Many lost interest or moved on, and never came back to apply.</p>
+    <div class="callout"><p><strong>Insight:</strong> this wasn't a motivation problem or a UI problem. Students wanted to apply — the process made them wait days for permission.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <h2><span class="num">03</span>Options I considered</h2>
+    <p>There were two directions: make manual verification faster by adding people, or remove the manual step by automating it. For automation, DigiLocker allows instant, government-backed verification — and there were two ways to use it.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Option</th><th>Time to go live</th><th>Cost</th><th>Verification time</th><th>Decision</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Add more people to manual verification</td>
+            <td>—</td>
+            <td>Recurring; grows with every new student</td>
+            <td>Faster, but still manual</td>
+            <td class="verdict no">Rejected — doesn't scale and is never instant</td>
+          </tr>
+          <tr>
+            <td>DigiLocker via Decentro's ready-made API</td>
+            <td>Next day</td>
+            <td>₹3–4 per verification</td>
+            <td>Instant</td>
+            <td class="verdict yes">Chosen to launch immediately</td>
+          </tr>
+          <tr>
+            <td>Direct DigiLocker integration</td>
+            <td>~1 month to build</td>
+            <td>One-time build effort; no per-verification fee</td>
+            <td>Instant</td>
+            <td class="verdict later">Built in parallel as the long-term solution</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>The trade-off</h3>
+    <p>Direct integration was cheaper in the long run, but waiting a month meant another month of students dropping off. Decentro cost money per verification but could go live the next day. Instead of choosing one, I chose <strong>both, in sequence</strong>: buy speed now, build the cheaper option in the background, then switch.</p>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <h2><span class="num">04</span>The solution</h2>
+    <div class="flows">
+      <div class="flow before">
+        <div class="flow-title">Before</div>
+        <div class="fnode">Student submits documents</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Waits in a manual review queue</div>
+        <div class="fdown">↓</div>
+        <div class="fnode bad">Team verifies by hand · 4–5 days</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Can finally apply — if still interested</div>
+      </div>
+      <div class="flow after">
+        <div class="flow-title">After</div>
+        <div class="fnode">Student taps "Verify with DigiLocker"</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Gives consent in DigiLocker</div>
+        <div class="fdown">↓</div>
+        <div class="fnode good">Verified instantly</div>
+        <div class="fdown">↓</div>
+        <div class="fnode">Applies for gigs right away</div>
+        <div class="fbranch">
+          <div class="fbranch-lbl">If DigiLocker verification fails</div>
+          <div class="fnode alt">Upload documents → manual review</div>
+        </div>
+      </div>
+    </div>
+    <h3>Rollout</h3>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-tag">Phase 1</div>
+        <div><h3>Launch with Decentro</h3><p>Integrated Decentro's DigiLocker API so students could verify instantly from the very next day.</p></div>
+      </div>
+      <div class="phase">
+        <div class="phase-tag">In parallel</div>
+        <div><h3>Build direct DigiLocker integration</h3><p>Asked the tech team to build the direct integration alongside (~1 month). Once it's built and working reliably, switch over and stop Decentro's pay-per-verification service.</p></div>
+      </div>
+      <div class="phase">
+        <div class="phase-tag">Always on</div>
+        <div><h3>Manual fallback</h3><p>DigiLocker can fail — server errors and other issues happen. Students who can't complete it can still upload documents for manual review, so nobody is blocked.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <h2><span class="num">05</span>Results</h2>
+    <ul>
+      <li>KYC-stage drop-off fell from <strong>42% to 18%</strong>.</li>
+      <li>Verified users grew <strong>35% in one quarter</strong>.</li>
+      <li>Verification went from <strong>4–5 days to instant</strong> for students using DigiLocker.</li>
+      <li>Manual review shrank to fallback cases only, instead of every student.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <h2><span class="num">06</span>What I learned</h2>
+    <ul>
+      <li><strong>Healthy top-of-funnel numbers can hide a broken core action.</strong> Downloads and daily actives looked good; job applications told the real story.</li>
+      <li><strong>Buy, then build.</strong> Paying per verification for a short time was cheaper than another month of lost students.</li>
+      <li><strong>Always design the failure path.</strong> An automated flow with no fallback just moves the drop-off somewhere else.</li>
+    </ul>
+  </section>
+
+  <div class="cta no-print">
+    <p>Want the detail? Read the product requirements for this change.</p>
+    <a class="btn" href="ekyc-prd.html">Read the PRD →</a>
+  </div>
+</main>
+
+<footer>Abhinav Chaudhary · AI Product Manager · Bengaluru, India</footer>
+
+</body>
+</html>
