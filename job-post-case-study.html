@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>LLM Job-Post Generator Case Study — Abhinav Chaudhary</title>
-<meta name="description" content="How an LLM-powered job-post generator lifted job posts 24% and revenue 8% at Timbuckdo by letting small business owners describe roles in their own language."/>
+<meta name="description" content="How an LLM-powered job-post generator lifted job posts 24% in 2 months and revenue 8% at Timbuckdo by letting small business owners speak or type roles in Hindi or English."/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="case.css"/>
 </head>
@@ -18,7 +18,7 @@
 <main>
   <div class="badge">Case Study · Timbuckdo Innovations</div>
   <h1>Paid, but not posting: an <span>LLM</span> that writes the job post</h1>
-  <p class="lede">Employers were buying subscriptions and starting job posts, but many never finished them. I found the form was the problem — so we let them describe the role in their own language and had Claude write the post for them to review.</p>
+  <p class="lede">Employers were buying subscriptions and starting job posts, but many never finished them. I found the form was the problem — so we let them speak or type the role in Hindi or English and had Claude write the post for them to review.</p>
   <div class="meta">
     <span><strong>Role:</strong> Product Manager</span>
     <span><strong>Built with:</strong> Claude (Anthropic)</span>
@@ -26,9 +26,9 @@
   </div>
 
   <div class="metrics">
-    <div class="metric"><div class="metric-num">+24%</div><div class="metric-lbl">job posts</div></div>
+    <div class="metric"><div class="metric-num">+24%</div><div class="metric-lbl">job posts in 2 months</div></div>
     <div class="metric"><div class="metric-num">+8%</div><div class="metric-lbl">platform revenue</div></div>
-    <div class="metric"><div class="metric-num">Hindi · English</div><div class="metric-lbl">or the employer's native language</div></div>
+    <div class="metric"><div class="metric-num">Voice · Text</div><div class="metric-lbl">in Hindi or English</div></div>
   </div>
 
   <!-- 1 -->
@@ -57,12 +57,12 @@
   <!-- 3 -->
   <section>
     <h2><span class="num">03</span>The idea</h2>
-    <p>Instead of asking employers to fill a form, let them <strong>describe the role in their own words and language</strong>, and have an LLM produce the complete job post: description, skills, tags, pay range and recommended skill set. The employer then reviews it, edits anything they don't like, and posts.</p>
+    <p>Instead of asking employers to fill a form, let them <strong>speak or type the role in their own words</strong>, and have an LLM produce the complete job post: title, description, skills, tags, pay range and recommended skill set. The employer then reviews it, edits anything they don't like, and posts.</p>
     <h3>Key product decisions</h3>
     <ul>
-      <li><strong>Their language, not ours.</strong> Employers can describe the role in Hindi, English or their native language.</li>
+      <li><strong>Their language, their way.</strong> Employers can speak or type the role in Hindi or English. Support for more Indian languages is in progress.</li>
       <li><strong>Fill the whole post, not just skills.</strong> Skills were the worst step, but every field was friction for these users.</li>
-      <li><strong>AI drafts, the employer decides.</strong> Nothing is posted until the employer has reviewed and, if needed, edited the draft.</li>
+      <li><strong>AI drafts, the employer decides.</strong> Every field, including the suggested title, can be edited. Nothing is posted until the employer has reviewed the draft.</li>
       <li><strong>Built into the existing flow.</strong> The tech team integrated the LLM directly into the job-posting portal, so employers didn't need to learn anything new.</li>
     </ul>
   </section>
@@ -83,9 +83,9 @@
       </div>
       <div class="flow after">
         <div class="flow-title">After</div>
-        <div class="fnode">Employer describes the role in their own language</div>
+        <div class="fnode">Employer speaks or types the role in Hindi or English</div>
         <div class="fdown">↓</div>
-        <div class="fnode good">Claude drafts the full post: description, skills, tags, pay range</div>
+        <div class="fnode good">Claude drafts the full post: title, description, skills, tags, pay range</div>
         <div class="fdown">↓</div>
         <div class="fnode">Employer reviews and edits</div>
         <div class="fdown">↓</div>
@@ -94,12 +94,36 @@
     </div>
   </section>
 
+  <!-- 4b -->
+  <section>
+    <h2><span class="num">05</span>Example</h2>
+    <p class="example-note">Illustrative example, written for this portfolio to show how the feature works. Not real platform data.</p>
+    <div class="flows">
+      <div class="flow">
+        <div class="flow-title">Employer says (voice, Hindi)</div>
+        <p class="example-quote">"Mujhe apni kapdon ki dukaan ke liye weekend pe do ladke-ladkiyan chahiye jo customers ko handle kar sakein aur billing mein thodi help karein. Dukaan Lajpat Nagar mein hai."</p>
+        <p class="example-trans">"I need two people for my clothing store on weekends who can handle customers and help a bit with billing. The store is in Lajpat Nagar."</p>
+      </div>
+      <div class="flow">
+        <div class="flow-title">Claude drafts</div>
+        <dl class="example-kv">
+          <dt>Title</dt><dd>Weekend Retail Sales Assistant</dd>
+          <dt>Description</dt><dd>Help customers find the right products, keep the store organised and support the billing counter at a clothing store in Lajpat Nagar, Delhi. Weekends only; 2 openings.</dd>
+          <dt>Skills</dt><dd>Customer handling · Basic billing · Hindi &amp; basic English communication</dd>
+          <dt>Tags</dt><dd>Retail · Weekend · Part-time · Delhi</dd>
+          <dt>Pay range</dt><dd>₹500–700 per day</dd>
+        </dl>
+        <p class="example-edit">Employer reviews, edits anything that doesn't fit, and posts.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- 5 -->
   <section>
-    <h2><span class="num">05</span>Results</h2>
-    <p>Measured on the analytics dashboard after launch:</p>
+    <h2><span class="num">06</span>Results</h2>
+    <p>Measured on the analytics dashboard over the 2 months after launch:</p>
     <ul>
-      <li>Job posts grew <strong>24%</strong>.</li>
+      <li>Job posts grew <strong>24% in 2 months</strong>.</li>
       <li>More job posts led to <strong>more job applications</strong> from students.</li>
       <li>More employers bought <strong>monthly subscriptions</strong> to post jobs.</li>
       <li>Platform revenue grew about <strong>8%</strong>, driven by more job posts and more jobs completed.</li>
@@ -107,7 +131,7 @@
     <div class="funnel" role="img" aria-label="Chain of impact: easier posting led to more job posts, more applications, more subscriptions, and 8% revenue growth">
       <div class="fstep ok">Easier posting<small>AI-drafted</small></div>
       <div class="farrow">→</div>
-      <div class="fstep ok">More job posts<small>+24%</small></div>
+      <div class="fstep ok">More job posts<small>+24% in 2 months</small></div>
       <div class="farrow">→</div>
       <div class="fstep ok">More applications<small>students</small></div>
       <div class="farrow">→</div>
@@ -119,7 +143,7 @@
 
   <!-- 6 -->
   <section>
-    <h2><span class="num">06</span>What I learned</h2>
+    <h2><span class="num">07</span>What I learned</h2>
     <ul>
       <li><strong>Paid but unused is an early churn warning.</strong> Healthy subscription sales hid the fact that employers weren't getting value.</li>
       <li><strong>Forms are written for the platform, not the user.</strong> Small business owners think in tasks, not in "skills" and "tags".</li>
